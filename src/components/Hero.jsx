@@ -1,5 +1,4 @@
 import React from "react";
-
 import { logo } from "../assets";
 
 const Hero = () => {
@@ -11,7 +10,7 @@ const Hero = () => {
         <button
           type='button'
           onClick={() =>
-            window.open("", "_blank")
+            window.open("https://github.com/Nikunjjjj", "_blank")
           }
           className='black_btn'
         >

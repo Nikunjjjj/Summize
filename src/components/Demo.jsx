@@ -1,10 +1,10 @@
 import React, { useState, useEffect } from "react";
-
 import { copy, linkIcon, loader, tick } from "../assets";
 import { useLazyGetSummaryQuery } from "../services/article";
 
 
 const Demo = () => {
+
   const [article, setArticle] = useState({
     url: "",
     summary: "",
@@ -14,9 +14,7 @@ const Demo = () => {
   const [getSummary, { error, isFetching }] = useLazyGetSummaryQuery();
 
   useEffect(() => {
-    const articlesFromLocalStorage = JSON.parse(
-      localStorage.getItem("articles")
-    );
+    const articlesFromLocalStorage = JSON.parse(localStorage.getItem("articles"));
 
     if (articlesFromLocalStorage) {
       setAllArticles(articlesFromLocalStorage);
@@ -25,9 +23,7 @@ const Demo = () => {
 
   
 const handleSubmit = async(e) => {
-
   e.preventDefault();
-
   const {data} = await getSummary({
     articleUrl: article.url});
 
@@ -41,8 +37,6 @@ const handleSubmit = async(e) => {
       localStorage.setItem('articles',JSON.stringify(updatedAllArticles))
     }
 }
-
-  
 
   return (
    <section className='mt-16 w-full max-w-xl'>
